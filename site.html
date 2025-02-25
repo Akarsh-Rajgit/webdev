@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJS Enterprises</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        header {
+            background-color: #232f3e;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        h2 {
+            color: #232f3e;
+            border-bottom: 2px solid #ff9900;
+            padding-bottom: 5px;
+            text-align: left;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            background: #e3e6e6;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            transition: 0.3s;
+            cursor: pointer;
+            text-align: left;
+        }
+        li:hover {
+            background: #d5dbdb;
+        }
+        .service-img {
+            display: none;
+            margin-top: 10px;
+            max-width: 100%;
+            border-radius: 5px;
+        }
+        .service-img-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .client-logo {
+            height: 40px;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+        footer {
+            background: #232f3e;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+        .home {
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .home h2 {
+            font-size: 28px;
+            color: #232f3e;
+            border: none;
+            text-align: left;
+        }
+        .home p {
+            font-size: 18px;
+            color: #555;
+            text-align: justify;
+        }
+        .contact {
+            padding: 20px;
+            background: #1a2533;
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .contact h2 {
+            color: #ff9900;
+        }
+        .contact p {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+    </style>
+    <script>
+        function toggleImage(event) {
+            let img = event.currentTarget.querySelector(".service-img");
+            if (img) {
+                img.style.display = img.style.display === "block" ? "none" : "block";
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>AJS Enterprises</h1>
+        <nav class="nav-links">
+            <a href="#">Home</a>
+            <a href="#services">Services</a>
+            <a href="#clients">Clients</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="home">
+            <h2>Welcome to AJS Enterprises</h2>
+            <p>Your trusted partner for industrial solutions. We specialize in supplying materials, mounting and wiring, designing components, and machine shifting activities.</p>
+            <p>With years of experience in the industry, AJS Enterprises is committed to providing high-quality services to our clients. Our expertise and dedication ensure seamless project execution and customer satisfaction.</p>
+            <p>Our team of professionals is equipped with the latest tools and techniques to handle all your industrial needs efficiently and effectively.</p>
+        </div>
+        <h2 id="services">Our Services</h2>
+        <ul>
+            <li onclick="toggleImage(event)">Supply of materials: We provide a wide range of materials for industrial applications.
+                <div class="service-img-container">
+                    <img class="service-img" src="logistics-service.jpg" alt="Supply of materials" height=300 width=400>
+                </div>
+            </li>
+            <li onclick="toggleImage(event)">Retrofitting: We offer professional mounting and wiring services for industrial equipment.
+                <div class="service-img-container">
+                    <img class="service-img" src="employee.jpeg" alt="Mounting and Wiring" height=300 width=400>
+                </div>
+            </li>
+            <li onclick="toggleImage(event)">Designing components: We provide custom design solutions for industrial components.
+                <div class="service-img-container">
+                    <img class="service-img" src="designing.jpg" alt="Designing components" height=300 width=400>
+                </div>
+            </li>
+            <li onclick="toggleImage(event)">Plant shifting activity: We specialize in machine shifting activities for industrial plants.
+                <div class="service-img-container">
+                    <img class="service-img" src="industrial-plant-shifting.jpg" alt="Machine shifting activity" height=300 width=400>
+                </div>
+            </li>
+        </ul>
+        <h2 id="clients">Our Clients</h2>
+        <ul>
+            <li><img class="client-logo" src="bsch.jpg" alt="Bosch"> Bosch Ltd</li>
+            <li><img class="client-logo" src="download.jpg" alt="Rexroth"> Rexroth - A Bosch Company</li>
+            <li><img class="client-logo" src="logic.jpg" alt="Logic "> Logic Machine Tools</li>
+        </ul>
+    </div>
+    <div class="contact" id="contact">
+        <h2>Contact Us</h2>
+        <p>Propreitor: Mallikarjun S Hulihalli</p>
+        <p>Email: ajsenterprises2007@yahoo.co.in</p>
+        <p>Phone: +91 98800 68813</p>
+        <p>Address: 2404 8th block extension, SMV Layout Muddinapalya main road, Banglore 560 091 Banglore, India</p>
+    </div>
+    <footer>
+        &copy; 2025 AJS Enterprises. All rights reserved.
+    </footer>
+</body>
+</html>
