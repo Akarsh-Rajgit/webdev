@@ -3,112 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stock Dashboard</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        input[type="text"] {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        button {
-            width: 100%;
-            padding: 10px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-        .result {
-            margin-top: 20px;
-            padding: 20px;
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .chart img {
-            max-width: 100%;
-            display: block;
-            margin: auto;
-        }
-    </style>
+    <title>cars</title>
+    <style></style>
+    <script src="script.js"></script>
 </head>
 <body>
-
-    <div class="container">
-        <h1>Stock Dashboard</h1>
-        <form id="stock-form">
-            <input type="text" id="ticker" name="ticker" placeholder="Enter ticker code (e.g., INFY.NS)" required />
-            <button type="submit">Get Stock Info</button>
-        </form>
-
-        <div id="stock-result" class="result" style="display: none;">
-            <h2>Stock Details</h2>
-            <p><strong>Ticker:</strong> <span id="ticker-text"></span></p>
-            <p><strong>Current Price:</strong> <span id="current-price"></span></p>
-            <p><strong>Open Price:</strong> <span id="open-price"></span></p>
-            <p><strong>Previous Close:</strong> <span id="previous-close"></span></p>
-            <p><strong>PE Ratio:</strong> <span id="pe-ratio"></span></p>
-            <p><strong>PB Ratio:</strong> <span id="pb-ratio"></span></p>
-            <p><strong>Dividend Yield:</strong> <span id="div-yield"></span></p>
-            <div class="chart">
-                <img id="stock-chart" src="" alt="Stock Chart" />
-            </div>
-        </div>
+    <h1><center>Cars</center></h1>
+    <marquee>🚗🚗Lets see the best performing cars of each Indian brand 🚗🚗</marquee>
+    <div>
+        <h2>Maruti Suzuki</h2>
+        <ul>
+            <li>Model: Swift</li>
+            <li>Engine: 1.2L Dualjet Petrol</li>
+            <li>Power: 89 bhp</li>
+            <li>Torque: 113 Nm</li>
+        </ul>
     </div>
-
-    <script>
-        document.getElementById('stock-form').addEventListener('submit', function (e) {
-            e.preventDefault();
-            const ticker = document.getElementById('ticker').value.trim();
-            
-            fetch('/get_stock_info', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: `ticker=${ticker}`,
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.error) {
-                    alert(data.error);
-                } else {
-                    document.getElementById('ticker-text').textContent = data.ticker;
-                    document.getElementById('current-price').textContent = data.current_price;
-                    document.getElementById('open-price').textContent = data.open_price;
-                    document.getElementById('previous-close').textContent = data.previous_close;
-                    document.getElementById('pe-ratio').textContent = data.pe_ratio;
-                    document.getElementById('pb-ratio').textContent = data.pb_ratio;
-                    document.getElementById('div-yield').textContent = data.div_yield;
-                    document.getElementById('stock-chart').src = `data:image/png;base64,${data.stock_chart}`;
-                    document.getElementById('stock-result').style.display = 'block';
-                }
-            })
-            .catch(error => console.error("Error fetching stock data:", error));
-        });
-    </script>
-
+    <div>
+        <h2>Tata Motors</h2>
+        <ul>
+            <li>Model: Nexon</li>
+            <li>Engine: 1.2L Turbocharged Revotron Petrol</li>
+            <li>Power: 118 bhp</li>
+            <li>Torque: 170 Nm</li>
+        </ul>
+    </div>
+    <div>
+        <h2>Tata Motors</h2>
+        <h3>Land Rover</h3>
+        <ul>
+            <li>Model: Range Rover Sport SV</li>
+            <li>Engine: 4.4L Twin-Turbo V8 with Mild Hybrid</li>
+            <li>Power: 635 PS</li>
+            <li>Torque: 750 Nm</li>
+            <li>Performance: 0-100 km/h in 3.8 sec, fastest Range Rover ever, adaptive air suspension, and all-wheel drive.</li>
+        </ul>
+    </div>
+    <div>
+        <h2>Tata Motors</h2>
+        <h3>Jaguar</h3>
+        <ul>
+            <li>Model: Nexon</li>
+            <li>Engine: 1.2L Turbocharged Revotron Petrol</li>
+            <li>Power: 118 bhp</li>
+            <li>Torque: 170 Nm</li>
+        </ul>
+    </div>
+    <div>
+        <h2>Mahindra</h2>
+        <ul>
+            <li>Model: Thar</li>
+            <li>Engine: 2.0L mStallion 150 TGDi Petrol</li>
+            <li>Power: 150 bhp</li>
+            <li>Torque: 320 Nm</li>
+        </ul>
+    </div>
 </body>
 </html>
