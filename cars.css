@@ -1,0 +1,68 @@
+body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        h1 {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            margin: 0;
+        }
+        .banner {
+            font-size: 18px;
+            font-weight: bold;
+            background: #3586e2;
+            padding: 10px;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+        }
+        .banner span {
+            display: inline-block;
+            animation: scrollText 10s linear infinite;
+        }
+        @keyframes scrollText {
+            from { transform: translateX(100%); }
+            to { transform: translateX(-100%); }
+        }
+        .car-section {
+            width: 60%;
+            margin: 20px auto;
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        .toggle-btn {
+            width: 100%;
+            background-color: #c9c8c8;
+            color: rgb(21, 21, 21);
+            font-size: 18px;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+            border-radius: 5px;
+        }
+        .toggle-btn:hover {
+            background-color: #3586e2;
+        }
+        .car-details {
+            display: none;
+            padding: 10px;
+            transition: max-height 0.3s ease-out;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            background: #eee;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
