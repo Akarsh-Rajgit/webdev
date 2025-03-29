@@ -11,7 +11,6 @@ const hitsDisplay = document.getElementById("hits");
 const gameOverDisplay = document.getElementById("game-over");
 const winDisplay = document.getElementById("win-message");
 
-// Player Movement (Up & Down)
 document.addEventListener("keydown", (e) => {
     const playerY = player.offsetTop;
     if (e.key === "ArrowUp" && playerY > 0) {
@@ -21,7 +20,6 @@ document.addEventListener("keydown", (e) => {
     }
 });
 
-// Spawn Enemies & Asteroids
 function spawnEnemy() {
     if (!gameRunning) return;
 
