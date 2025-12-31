@@ -1,0 +1,130 @@
+:root {
+  --accent: #2463eb;
+  --bg: #f6f8fb;
+  --card: #ffffff;
+  --muted: #6b7280;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+  margin: 0;
+  background: var(--bg);
+  color: #111;
+}
+.site-header {
+  background: linear-gradient(90deg, white, #fbfdff);
+  border-bottom: 1px solid #e6eefb;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+.logo {
+  font-weight: 700;
+  color: var(--accent);
+  text-decoration: none;
+}
+.nav-links a {
+  margin-left: 1rem;
+  color: #334155;
+  text-decoration: none;
+}
+.container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+.hero {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+.sub {
+  color: var(--muted);
+}
+.card {
+  background: var(--card);
+  padding: 1.25rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(16, 24, 40, 0.06);
+  margin-bottom: 1.25rem;
+}
+.skills {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+}
+.skills li {
+  background: #f1f5f9;
+  padding: 0.4rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+}
+.timeline h4 {
+  margin: 0;
+}
+.site-footer {
+  text-align: center;
+  padding: 1rem;
+  color: var(--muted);
+}
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+}
+.btn.outline {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+.btn.small {
+  padding: 0.4rem 0.6rem;
+  font-size: 0.9rem;
+}
+.action-row {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+.biodata-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.biodata-table th {
+  width: 35%;
+  text-align: left;
+  padding: 0.6rem;
+  color: var(--muted);
+  background: transparent;
+}
+.biodata-table td {
+  padding: 0.6rem;
+}
+.muted {
+  color: var(--muted);
+}
+.project {
+  margin-bottom: 1rem;
+}
+.small {
+  font-size: 0.9rem;
+}
+@media (max-width: 700px) {
+  .nav {
+    padding: 0.6rem 1rem;
+  }
+  .container {
+    margin: 1rem;
+  }
+}
