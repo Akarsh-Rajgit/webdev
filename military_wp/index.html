@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Military OP!!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #0e0f0f; /* Blackish blue */
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #dc8d04;
+        }
+        h2 {
+            color: #5beb4e;
+            margin-top: 30px;
+        }
+        p {
+            max-width: 800px;
+            margin: auto;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #d1d8e0;
+        }
+        .section {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 1000px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            padding: 20px;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0px 2px 5px rgba(255, 255, 255, 0.2);
+            transition: transform 0.2s ease-in-out;
+            cursor: pointer;
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .lightbox.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+        .close-btn, .prev-btn, .next-btn {
+            position: absolute;
+            color: white;
+            font-size: 24px;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .close-btn {
+            top: 20px;
+            right: 20px;
+        }
+        .prev-btn {
+            left: 20px;
+        }
+        .next-btn {
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Indian Military</h1>
+    <div class="section">
+        <p>
+            The Indian Military has the vital responsibility of guarding India's borders from its neighbors.<br/>
+            Their bravery and success ensure our safety, and it is our duty to honor their accomplishments.<br/>
+            This project is a humble tribute to our heroes and their fallen comrades. 🫡🫡🫡
+        </p>
+    </div>
+    
+    <div class="section">
+        <h2>Indian Soldiers 🪖🪖</h2>
+        <div class="gallery">
+            <img src="6.jpg">
+            <img src="7.jpg">
+            <img src="5.jpg">
+            <img src="9.jpg">
+            <img src="10.jpg">
+            <img src="11.jpeg">
+            <img src="12.jpeg">
+            <img src="13.jpeg">
+            <img src="14.jpeg">
+            <img src="15.jpeg">
+            <img src="16.jpeg">
+            <img src="17.jpeg">
+            <img src="18.jpeg">
+            <img src="19.jpeg">
+            <img src="20.jpeg">
+            <img src="21.jpeg">
+            <img src="22.jpeg">
+            <img src="23.jpeg">
+            <img src="24.jpeg">
+            <img src="31.jpg">
+            <img src="32.jpg">
+            <img src="33.jpg">
+            <img src="34.jpg">
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Indian Navy 🚢🚢</h2>
+        <div class="gallery">
+            <img src="1.jpg">
+            <img src="2.jpg">
+            <img src="3.jpg">
+            <img src="4.jpg">
+            <img src="8.jpg">
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Indian Air Force 🛩️🛩️</h2>
+        <div class="gallery">
+            <img src="25.jpeg">
+            <img src="26.jpeg">
+            <img src="27.jpeg">
+            <img src="28.jpeg">
+            <img src="29.jpg">
+            <img src="30.jpg">
+        </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <button class="close-btn" onclick="closeLightbox()">✖</button>
+        <button class="prev-btn" onclick="prevImage()">◀</button>
+        <img id="lightbox-img">
+        <button class="next-btn" onclick="nextImage()">▶</button>
+    </div>
+
+    <script>
+        let images = document.querySelectorAll(".gallery img");
+        let lightbox = document.getElementById("lightbox");
+        let lightboxImg = document.getElementById("lightbox-img");
+        let currentIndex = 0;
+
+        // Open Lightbox
+        function openLightbox(index) {
+            currentIndex = index;
+            lightboxImg.src = images[currentIndex].src;
+            lightbox.classList.add("active");
+        }
+
+        // Close Lightbox
+        function closeLightbox() {
+            lightbox.classList.remove("active");
+        }
+
+        // Previous Image
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            lightboxImg.src = images[currentIndex].src;
+        }
+
+        // Next Image
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            lightboxImg.src = images[currentIndex].src;
+        }
+
+        // Add click event to all images
+        images.forEach((img, index) => {
+            img.addEventListener("click", () => openLightbox(index));
+        });
+    </script>
+</body>
+</html>
